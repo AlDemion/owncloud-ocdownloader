@@ -4,6 +4,11 @@ set -e
 # ocdownloader requirements
 su - aria2 -c '/usr/bin/aria2c --enable-rpc --rpc-allow-origin-all -c -D --check-certificate=false &'
 
+if [ ! -e '/var/www/html/version.php' ]; then
+	tar cf - --one-file-system -C /usr/src/owncloud . | tar xf -
+	chown -R www-data /var/www/html
+fi
+
 # makes aria2 and www-data works together
 umask 0007
 apache2-foreground
