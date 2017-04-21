@@ -1,0 +1,8 @@
+# docker image name: torrentmonitor | armhf-torrentmonitor
+IMAGENAME=owncloud-ocdownloader
+
+# path to dockerfile: Dockerfile | Dockerfile-armhf
+DOCKERFILE=Dockerfile
+
+# change it for different container name
+CONTAINER_NAME=owncloud
